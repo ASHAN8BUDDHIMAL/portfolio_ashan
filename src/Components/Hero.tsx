@@ -62,8 +62,8 @@ const Hero: React.FC = () => {
                 Contact Me
               </a>
               <a
-                href="/assets/2025_Resume_Ashan.pdf"
-                download="Ashan_Resume_2025.pdf"
+                href="/assets/Ashan_resume_2026.pdf"
+                download="Ashan_resume_2026.pdf"
                 className="flex items-center justify-center gap-2 px-6 py-3 bg-teal-400/10 border border-teal-400 text-white font-semibold rounded-lg hover:scale-105 transition-transform"
               >
                 <Download className="w-5 h-5" />

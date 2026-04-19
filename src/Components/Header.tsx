@@ -88,8 +88,8 @@ const Header: React.FC = () => {
 
           {/* Resume Button */}
           <a
-            href="/assets/2025_Resume_Ashan.pdf"
-            download="Ashan_Resume_2025.pdf"
+            href="/assets/Ashan_resume_2026.pdf"
+            download="Ashan_resume_2026.pdf"
             className="ml-4 px-4 py-2 bg-teal-500 text-white font-semibold rounded-lg hover:bg-teal-600 flex items-center gap-2"
           >
             <FaDownload className="w-4 h-4" />
@@ -142,8 +142,8 @@ const Header: React.FC = () => {
 
           {/* Mobile Resume Button */}
           <a
-            href="/assets/2025_Resume_Ashan.pdf"
-            download="Ashan_Resume_2025.pdf"
+            href="/assets/Ashan_resume_2026.pdf"
+            download="Ashan_resume_2026.pdf"
             className="block px-4 py-3 bg-teal-500 text-white font-semibold rounded-lg text-center hover:bg-teal-600 flex items-center justify-center gap-2"
             onClick={() => setIsMenuOpen(false)}
           >
