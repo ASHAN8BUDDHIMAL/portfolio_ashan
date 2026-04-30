@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes, FaGithub, FaLinkedin, FaTwitter, FaDownload } from 'react-icons/fa';
 
-// Navigation links for easy reuse
 const navItems = [
   { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
@@ -10,7 +9,6 @@ const navItems = [
   { name: 'Contact', href: '#contact' },
 ];
 
-// Social links for easy reuse
 const socialLinks = [
   { Icon: FaGithub, href: 'https://github.com/ASHAN8BUDDHIMAL', label: 'GitHub' },
   { Icon: FaLinkedin, href: 'https://linkedin.com/in/ashan-buddhimal-bb6a892b4', label: 'LinkedIn' },
@@ -18,12 +16,10 @@ const socialLinks = [
 ];
 
 const Header: React.FC = () => {
-  // State for mobile menu and scroll effect
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
-  // Track scroll to highlight active section and change header style
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -38,85 +34,63 @@ const Header: React.FC = () => {
       });
       if (current) setActiveSection(current);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 w-full z-50 bg-gray-900/90 text-white py-4 ${
-        isScrolled ? 'shadow-lg shadow-teal-500/20' : ''
-      }`}
-    >
+    <header className={`fixed top-0 w-full z-50 bg-slate-800/90 text-white py-4 ${isScrolled ? 'shadow-lg shadow-sky-300/10' : ''}`}>
       <nav className="container mx-auto px-4 flex justify-between items-center">
-        {/* Logo */}
-        <a href="#home" className="text-2xl font-bold text-teal-400">
-          Ashan.
-        </a>
+        <a href="#home" className="text-2xl font-bold text-sky-300">Ashan.</a>
 
-        {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-4">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className={`px-4 py-2 rounded-lg font-semibold ${
+              className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                 activeSection === item.href.substring(1)
-                  ? 'bg-teal-500 text-white'
-                  : 'text-gray-300 hover:bg-teal-500/20'
+                  ? 'bg-sky-400 text-white'
+                  : 'text-sky-100 hover:bg-sky-400/20'
               }`}
             >
               {item.name}
             </a>
           ))}
 
-          {/* Social Links */}
-          <div className="flex items-center gap-2 ml-4 pl-4 border-l border-teal-500/30">
+          <div className="flex items-center gap-2 ml-4 pl-4 border-l border-sky-300/20">
             {socialLinks.map(({ Icon, href, label }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg hover:bg-teal-500/20"
-              >
-                <Icon className="w-5 h-5 text-teal-400" />
+              <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg hover:bg-sky-400/20">
+                <Icon className="w-5 h-5 text-sky-300" />
               </a>
             ))}
           </div>
 
-          {/* Resume Button */}
           <a
             href="/assets/Ashan_resume_2026.pdf"
             download="Ashan_resume_2026.pdf"
-            className="ml-4 px-4 py-2 bg-teal-500 text-white font-semibold rounded-lg hover:bg-teal-600 flex items-center gap-2"
+            className="ml-4 px-4 py-2 bg-sky-400 text-white font-semibold rounded-lg hover:bg-sky-300 hover:text-slate-800 transition-all flex items-center gap-2"
           >
             <FaDownload className="w-4 h-4" />
             Resume
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="lg:hidden p-2 rounded-lg hover:bg-teal-500/20"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
+        <button className="lg:hidden p-2 rounded-lg hover:bg-sky-400/20" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {isMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
         </button>
       </nav>
 
-      {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-gray-900/95 px-4 py-6">
+        <div className="lg:hidden bg-slate-800/95 px-4 py-6">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className={`block py-2 px-4 rounded-lg font-semibold text-center ${
+              className={`block py-2 px-4 rounded-lg font-semibold text-center mb-1 ${
                 activeSection === item.href.substring(1)
-                  ? 'bg-teal-500 text-white'
-                  : 'text-gray-300 hover:bg-teal-500/20'
+                  ? 'bg-sky-400 text-white'
+                  : 'text-sky-100 hover:bg-sky-400/20'
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -124,27 +98,18 @@ const Header: React.FC = () => {
             </a>
           ))}
 
-          {/* Mobile Social Links */}
-          <div className="flex justify-center gap-4 py-4 border-t border-teal-500/30">
+          <div className="flex justify-center gap-4 py-4 border-t border-sky-300/20">
             {socialLinks.map(({ Icon, href, label }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg hover:bg-teal-500/20"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <Icon className="w-5 h-5 text-teal-400" />
+              <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg hover:bg-sky-400/20" onClick={() => setIsMenuOpen(false)}>
+                <Icon className="w-5 h-5 text-sky-300" />
               </a>
             ))}
           </div>
 
-          {/* Mobile Resume Button */}
           <a
             href="/assets/Ashan_resume_2026.pdf"
             download="Ashan_resume_2026.pdf"
-            className="block px-4 py-3 bg-teal-500 text-white font-semibold rounded-lg text-center hover:bg-teal-600 flex items-center justify-center gap-2"
+            className="block px-4 py-3 bg-sky-400 text-white font-semibold rounded-lg text-center hover:bg-sky-300 hover:text-slate-800 transition-all flex items-center justify-center gap-2"
             onClick={() => setIsMenuOpen(false)}
           >
             <FaDownload className="w-4 h-4" />
