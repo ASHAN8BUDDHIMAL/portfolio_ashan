@@ -10,26 +10,28 @@ const skillCategories = [
 ];
 
 const Skills: React.FC = () => {
+  const skillIconMap: Record<string, { icon: React.ReactNode; color: string }> = {
+    'JavaScript': { icon: <SiJavascript size={20} />, color: '#F7DF1E' },
+    'TypeScript': { icon: <SiTypescript size={20} />, color: '#3178C6' },
+    'Java':       { icon: <FaJava size={20} />,       color: '#ED8B00' },
+    'PHP':        { icon: <SiPhp size={20} />,        color: '#777BB4' },
+    'React.js':   { icon: <FaReact size={20} />,      color: '#61DAFB' },
+    'Next.js':    { icon: <SiNextdotjs size={20} />,  color: '#000000' },
+    'Express.js': { icon: <SiExpress size={20} />,    color: '#000000' },
+    'Spring Boot':{ icon: <SiSpringboot size={20} />, color: '#6DB33F' },
+    'Tailwind CSS':{ icon: <SiTailwindcss size={20} />,color: '#06B6D4' },
+    'MongoDB':    { icon: <SiMongodb size={20} />,    color: '#47A248' },
+    'MySQL':      { icon: <SiMysql size={20} />,      color: '#4479A1' },
+    'Git':        { icon: <FaGitAlt size={20} />,     color: '#F05032' },
+    'GitHub':     { icon: <FaGitAlt size={20} />,     color: '#24292e' },
+    'Vercel':     { icon: <SiVercel size={20} />,     color: '#000000' },
+    'Netlify':    { icon: <SiNetlify size={20} />,    color: '#00C7B7' },
+  };
+
   const getSkillIcon = (skill: string) => {
-    const p = { className: 'text-sky-400 text-xl' };
-    switch (skill) {
-      case 'React.js': return <FaReact {...p} />;
-      case 'JavaScript': return <SiJavascript {...p} />;
-      case 'TypeScript': return <SiTypescript {...p} />;
-      case 'Tailwind CSS': return <SiTailwindcss {...p} />;
-      case 'Java': return <FaJava {...p} />;
-      case 'Spring Boot': return <SiSpringboot {...p} />;
-      case 'PHP': return <SiPhp {...p} />;
-      case 'MySQL': return <SiMysql {...p} />;
-      case 'MongoDB': return <SiMongodb {...p} />;
-      case 'Next.js': return <SiNextdotjs {...p} />;
-      case 'Express.js': return <SiExpress {...p} />;
-      case 'Git': return <FaGitAlt {...p} />;
-      case 'GitHub': return <FaGitAlt {...p} />;
-      case 'Vercel': return <SiVercel {...p} />;
-      case 'Netlify': return <SiNetlify {...p} />;
-      default: return <FaCode {...p} />;
-    }
+    const entry = skillIconMap[skill];
+    if (!entry) return <FaCode size={20} style={{ color: '#8894b4' }} />;
+    return <span style={{ color: entry.color, display: 'flex' }}>{entry.icon}</span>;
   };
 
   return (
@@ -46,7 +48,6 @@ const Skills: React.FC = () => {
           {skillCategories.map((category, index) => (
             <div key={index} className="bg-sky-50 p-6 rounded-lg shadow-sm border border-sky-100">
               <div className="flex items-center gap-3 mb-4">
-                {getSkillIcon(category.skills[0])}
                 <h3 className="text-xl font-semibold text-slate-700">{category.title}</h3>
               </div>
               <div className="space-y-2">

@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { FaPhone, FaEnvelope, FaLinkedin, FaGithub, FaPaperPlane } from 'react-icons/fa';
 
 const contactInfo = [
-  { icon: FaPhone, label: 'Phone', value: '071 0474331 / 072 5268605', href: 'tel:+94710474331' },
-  { icon: FaEnvelope, label: 'Email', value: 'ashanbuddhimal@gmail.com', href: 'mailto:ashanbuddhimal@gmail.com' },
-  { icon: FaLinkedin, label: 'LinkedIn', value: 'linkedin.com/in/ashan-buddhimal', href: 'https://linkedin.com/in/ashan-buddhimal-bb6a892b4' },
-  { icon: FaGithub, label: 'GitHub', value: 'github.com/ASHAN8BUDDHIMAL', href: 'https://github.com/ASHAN8BUDDHIMAL' },
+  { icon: FaPhone,    label: 'Phone',    value: '071 0474331 / 072 5268605',    href: 'tel:+94710474331',                              color: '#22c55e' },
+  { icon: FaEnvelope, label: 'Email',    value: 'ashanbuddhimal@gmail.com',      href: 'mailto:ashanbuddhimal@gmail.com',               color: '#EA4335' },
+  { icon: FaLinkedin, label: 'LinkedIn', value: 'linkedin.com/in/ashan-buddhimal', href: 'https://linkedin.com/in/ashan-buddhimal-bb6a892b4', color: '#0A66C2' },
+  { icon: FaGithub,   label: 'GitHub',   value: 'github.com/ASHAN8BUDDHIMAL',    href: 'https://github.com/ASHAN8BUDDHIMAL',            color: '#24292e' },
 ];
 
 const Contact: React.FC = () => {
@@ -53,7 +53,7 @@ const Contact: React.FC = () => {
                   target={contact.href.startsWith('http') ? '_blank' : '_self'}
                   rel={contact.href.startsWith('http') ? 'noopener noreferrer' : ''}
                 >
-                  <contact.icon className="text-sky-400 text-xl" />
+                  <contact.icon className="text-xl" style={{ color: contact.color }} />
                   <div>
                     <p className="text-slate-400 text-sm">{contact.label}</p>
                     <p className="text-white font-semibold">{contact.value}</p>
@@ -121,6 +121,13 @@ const Contact: React.FC = () => {
             </form>
           </div>
         </div>
+      </div>
+
+      {/* Footer */}
+      <div className="text-center mt-10 pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+        <p className="text-sm" style={{ color: '#94a3b8' }}>
+          © {new Date().getFullYear()} Ashan Buddhimal. All rights reserved.
+        </p>
       </div>
     </section>
   );

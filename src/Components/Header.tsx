@@ -10,9 +10,9 @@ const navItems = [
 ];
 
 const socialLinks = [
-  { Icon: FaGithub, href: 'https://github.com/ASHAN8BUDDHIMAL', label: 'GitHub' },
-  { Icon: FaLinkedin, href: 'https://linkedin.com/in/ashan-buddhimal-bb6a892b4', label: 'LinkedIn' },
-  { Icon: FaTwitter, href: 'mailto:ashanbuddhimal@gmail.com', label: 'Email' },
+  { Icon: FaGithub,   href: 'https://github.com/ASHAN8BUDDHIMAL',               label: 'GitHub',   color: '#e2e8f0' },
+  { Icon: FaLinkedin, href: 'https://linkedin.com/in/ashan-buddhimal-bb6a892b4', label: 'LinkedIn', color: '#0A66C2' },
+  { Icon: FaTwitter,  href: 'mailto:ashanbuddhimal@gmail.com',                   label: 'Email',    color: '#EA4335' },
 ];
 
 const Header: React.FC = () => {
@@ -59,9 +59,9 @@ const Header: React.FC = () => {
           ))}
 
           <div className="flex items-center gap-2 ml-4 pl-4 border-l border-sky-300/20">
-            {socialLinks.map(({ Icon, href, label }) => (
+            {socialLinks.map(({ Icon, href, label, color }) => (
               <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg hover:bg-sky-400/20">
-                <Icon className="w-5 h-5 text-sky-300" />
+                <Icon className="w-5 h-5" style={{ color }} />
               </a>
             ))}
           </div>
@@ -99,9 +99,9 @@ const Header: React.FC = () => {
           ))}
 
           <div className="flex justify-center gap-4 py-4 border-t border-sky-300/20">
-            {socialLinks.map(({ Icon, href, label }) => (
+            {socialLinks.map(({ Icon, href, label, color }) => (
               <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg hover:bg-sky-400/20" onClick={() => setIsMenuOpen(false)}>
-                <Icon className="w-5 h-5 text-sky-300" />
+                <Icon className="w-5 h-5" style={{ color }} />
               </a>
             ))}
           </div>

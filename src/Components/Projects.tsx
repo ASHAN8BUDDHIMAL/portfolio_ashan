@@ -1,7 +1,29 @@
 import React, { useState } from 'react';
-import { FaGithub, FaCode, FaStar, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaGithub, FaCode, FaStar, FaChevronDown, FaChevronUp, FaGitAlt, FaJava, FaReact } from 'react-icons/fa';
+import { SiJavascript, SiTypescript, SiPhp, SiNextdotjs, SiExpress, SiSpringboot, SiTailwindcss, SiMongodb, SiMysql, SiVercel, SiNetlify, SiHtml5, SiCss3 } from 'react-icons/si';
+
+const techIconMap: Record<string, { icon: React.ReactNode; color: string }> = {
+  'JavaScript':  { icon: <SiJavascript size={13} />,  color: '#F7DF1E' },
+  'TypeScript':  { icon: <SiTypescript size={13} />,  color: '#3178C6' },
+  'Java':        { icon: <FaJava size={13} />,         color: '#ED8B00' },
+  'PHP':         { icon: <SiPhp size={13} />,          color: '#777BB4' },
+  'React.js':    { icon: <FaReact size={13} />,        color: '#61DAFB' },
+  'Next.js':     { icon: <SiNextdotjs size={13} />,    color: '#ffffff' },
+  'Express.js':  { icon: <SiExpress size={13} />,      color: '#ffffff' },
+  'Spring Boot': { icon: <SiSpringboot size={13} />,   color: '#6DB33F' },
+  'Tailwind CSS':{ icon: <SiTailwindcss size={13} />,  color: '#06B6D4' },
+  'MongoDB':     { icon: <SiMongodb size={13} />,      color: '#47A248' },
+  'MySQL':       { icon: <SiMysql size={13} />,        color: '#4479A1' },
+  'Git':         { icon: <FaGitAlt size={13} />,       color: '#F05032' },
+  'Vercel':      { icon: <SiVercel size={13} />,       color: '#ffffff' },
+  'Netlify':     { icon: <SiNetlify size={13} />,      color: '#00C7B7' },
+  'HTML':        { icon: <SiHtml5 size={13} />,        color: '#E34F26' },
+  'CSS':         { icon: <SiCss3 size={13} />,         color: '#1572B6' },
+};
 
 const projects = [
+
+
   {
     title: 'Worker Discovery and Task Management System (WDTMS)',
     description: 'A web-based platform connecting users with suitable workers for task-based services.',
@@ -81,11 +103,11 @@ const Projects: React.FC = () => {
 
   return (
     <section id="projects" className="py-12 relative text-slate-700">
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600&auto=format&fit=crop')` }}></div>
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat  bg-gray-700" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600&auto=format&fit=crop')` }}></div>
       <div className="absolute inset-0 bg-white/20"></div>
-      <div className="container mx-auto px-4 text-center mb-8 relative z-10">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white bg-gray-700">My Projects</h2>
-        <p className="text-lg text-white max-w-2xl mx-auto mt-2 bg-gray-700">
+      <div className="container mx-auto px-4 text-center mb-8 relative z-10 ">
+        <h2 className="text-3xl sm:text-4xl font-bold text-white">My Projects</h2>
+        <p className="text-lg text-white max-w-2xl mx-auto mt-2">
           Real-world projects solving problems with modern tech stacks.
         </p>
       </div>
@@ -97,15 +119,15 @@ const Projects: React.FC = () => {
             className={`bg-white p-6 rounded-lg shadow-sm border border-sky-100 ${project.featured ? 'md:col-span-2' : ''}`}
           >
             {project.featured && (
-              <div className="flex items-center gap-2 bg-sky-400 text-white px-3 py-1 rounded-full text-sm font-semibold mb-4 inline-block">
-                <FaStar className="w-4 h-4" /> Featured
+              <div className="flex items-center gap-2 px-3 py-1 rounded-full text-sm font-semibold mb-4 inline-block" style={{ background: 'rgba(255,215,0,0.12)', border: '1px solid rgba(255,215,0,0.35)', color: '#FFD700' }}>
+                <FaStar className="w-4 h-4" style={{ color: '#FFD700' }} /> Featured
               </div>
             )}
 
             <div className="flex items-start justify-between mb-4">
               <h3 className="text-xl font-semibold text-slate-700">{project.title}</h3>
               {project.groupProject && (
-                <span className="bg-sky-100 text-sky-500 px-3 py-1 rounded-full text-sm">Team Project</span>
+                <span className="px-3 py-1 rounded-full text-sm" style={{ background: 'rgba(99,102,241,0.12)', border: '1px solid rgba(99,102,241,0.3)', color: '#818cf8' }}>Team Project</span>
               )}
             </div>
 
@@ -121,7 +143,8 @@ const Projects: React.FC = () => {
 
             <button
               onClick={() => toggleProject(index)}
-              className="flex items-center gap-2 text-sky-400 hover:text-sky-500 mb-4 text-sm font-semibold"
+              className="flex items-center gap-2 mb-4 text-sm font-semibold"
+              style={{ color: '#7c6ef7' }}
             >
               {expandedProjects.includes(index) ? (
                 <><FaChevronUp className="w-4 h-4" /> See Less</>
@@ -131,30 +154,37 @@ const Projects: React.FC = () => {
             </button>
 
             <div className="flex flex-wrap gap-2 mb-4">
-              {project.technologies.map((tech, techIndex) => (
-                <span key={techIndex} className="px-3 py-1 bg-sky-100 text-sky-500 rounded-full text-sm">
-                  {tech}
-                </span>
-              ))}
+              {project.technologies.map((tech, techIndex) => {
+                const entry = techIconMap[tech];
+                return (
+                  <span key={techIndex} className="px-3 py-1 bg-transparent border border-slate-200 text-slate-600 rounded-full text-sm flex items-center gap-1.5">
+                    {entry && <span style={{ color: entry.color, display: 'flex' }}>{entry.icon}</span>}
+                    {tech}
+                  </span>
+                );
+              })}
             </div>
 
             <div className="flex gap-4">
               {project.github && (
                 <a href={project.github} target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-sky-400 text-white rounded-lg hover:bg-sky-500 transition-all">
-                  <FaGithub className="w-5 h-5" /> View Code
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg transition-all"
+                  style={{ background: 'rgba(36,41,47,0.9)', border: '1px solid rgba(255,255,255,0.15)', color: '#e2e8f8' }}>
+                  <FaGithub className="w-5 h-5" style={{ color: '#ffffff' }} /> View Code
                 </a>
               )}
               {project.githubBackend && (
                 <a href={project.githubBackend} target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-sky-100 text-sky-500 rounded-lg hover:bg-sky-200 transition-all">
-                  <FaCode className="w-5 h-5" /> Backend
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg transition-all"
+                  style={{ background: 'rgba(124,110,247,0.1)', border: '1px solid rgba(124,110,247,0.3)', color: '#a5b4fc' }}>
+                  <FaCode className="w-5 h-5" style={{ color: '#7c6ef7' }} /> Backend
                 </a>
               )}
               {project.githubFrontend && (
                 <a href={project.githubFrontend} target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-sky-100 text-sky-500 rounded-lg hover:bg-sky-200 transition-all">
-                  <FaCode className="w-5 h-5" /> Frontend
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg transition-all"
+                  style={{ background: 'rgba(91,163,245,0.1)', border: '1px solid rgba(91,163,245,0.3)', color: '#93c5fd' }}>
+                  <FaCode className="w-5 h-5" style={{ color: '#5ba3f5' }} /> Frontend
                 </a>
               )}
             </div>
