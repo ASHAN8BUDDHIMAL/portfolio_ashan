@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { FaPhone, FaEnvelope, FaLinkedin, FaGithub, FaPaperPlane } from 'react-icons/fa';
 
 const contactInfo = [
-  { icon: FaPhone,    label: 'Phone',    value: '071 0474331 / 072 5268605',    href: 'tel:+94710474331',                              color: '#22c55e' },
-  { icon: FaEnvelope, label: 'Email',    value: 'ashanbuddhimal@gmail.com',      href: 'mailto:ashanbuddhimal@gmail.com',               color: '#EA4335' },
-  { icon: FaLinkedin, label: 'LinkedIn', value: 'linkedin.com/in/ashan-buddhimal', href: 'https://linkedin.com/in/ashan-buddhimal-bb6a892b4', color: '#0A66C2' },
-  { icon: FaGithub,   label: 'GitHub',   value: 'github.com/ASHAN8BUDDHIMAL',    href: 'https://github.com/ASHAN8BUDDHIMAL',            color: '#24292e' },
+  { icon: FaPhone,    label: 'Phone',    value: '071 0474331 / 072 5268605',       href: 'tel:+94710474331',                                 color: '#22c55e' },
+  { icon: FaEnvelope, label: 'Email',    value: 'ashanbuddhimal@gmail.com',         href: 'mailto:ashanbuddhimal@gmail.com',                  color: '#EA4335' },
+  { icon: FaLinkedin, label: 'LinkedIn', value: 'linkedin.com/in/ashan-buddhimal',  href: 'https://linkedin.com/in/ashan-buddhimal-bb6a892b4', color: '#0A66C2' },
+  { icon: FaGithub,   label: 'GitHub',   value: 'github.com/ASHAN8BUDDHIMAL',       href: 'https://github.com/ASHAN8BUDDHIMAL',               color: '#24292e' },
 ];
 
 const Contact: React.FC = () => {
@@ -64,8 +64,8 @@ const Contact: React.FC = () => {
 
             <div className="p-4 bg-slate-700 border border-slate-600 rounded-lg">
               <div className="flex items-center gap-2 mb-2">
-                <div className="w-2 h-2 bg-sky-400 rounded-full animate-pulse"></div>
-                <span className="text-sky-500 font-semibold">Open to Opportunities</span>
+                <div className="w-2 h-2 bg-yellow-600 rounded-full animate-pulse"></div>
+                <span className="text-yellow-600 font-semibold">Open to Opportunities</span>
               </div>
               <p className="text-slate-300 text-sm">Ready for internships and projects. I'll reply within a day!</p>
             </div>
@@ -79,7 +79,7 @@ const Contact: React.FC = () => {
                   <label htmlFor="name" className="block text-slate-300 text-sm font-semibold mb-1">Name *</label>
                   <input
                     type="text" id="name" name="name" value={formData.name} onChange={handleChange} required
-                    className="w-full px-4 py-2 bg-slate-600 border border-slate-500 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-400"
+                    className="w-full px-4 py-2 bg-slate-600 border border-slate-500 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-yellow-600"
                     placeholder="Your name"
                   />
                 </div>
@@ -87,7 +87,7 @@ const Contact: React.FC = () => {
                   <label htmlFor="email" className="block text-slate-300 text-sm font-semibold mb-1">Email *</label>
                   <input
                     type="email" id="email" name="email" value={formData.email} onChange={handleChange} required
-                    className="w-full px-4 py-2 bg-slate-600 border border-slate-500 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-400"
+                    className="w-full px-4 py-2 bg-slate-600 border border-slate-500 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-yellow-600"
                     placeholder="Your email"
                   />
                 </div>
@@ -96,7 +96,7 @@ const Contact: React.FC = () => {
                 <label htmlFor="subject" className="block text-slate-300 text-sm font-semibold mb-1">Subject *</label>
                 <input
                   type="text" id="subject" name="subject" value={formData.subject} onChange={handleChange} required
-                  className="w-full px-4 py-2 bg-slate-600 border border-slate-500 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-400"
+                  className="w-full px-4 py-2 bg-slate-600 border border-slate-500 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-yellow-600"
                   placeholder="What's this about?"
                 />
               </div>
@@ -104,16 +104,16 @@ const Contact: React.FC = () => {
                 <label htmlFor="message" className="block text-slate-300 text-sm font-semibold mb-1">Message *</label>
                 <textarea
                   id="message" name="message" rows={5} value={formData.message} onChange={handleChange} required
-                  className="w-full px-4 py-2 bg-slate-600 border border-slate-500 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-400"
+                  className="w-full px-4 py-2 bg-slate-600 border border-slate-500 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-yellow-600"
                   placeholder="Your message"
                 ></textarea>
               </div>
               <button
                 type="submit" disabled={isSubmitting}
-                className="w-full px-4 py-2 bg-sky-400 text-white font-semibold rounded-lg hover:bg-sky-500 disabled:opacity-50 flex items-center justify-center gap-2 transition-all"
+                className="w-full px-4 py-2 bg-yellow-600 text-slate-900 font-semibold rounded-lg hover:bg-yellow-600 disabled:opacity-50 flex items-center justify-center gap-2 transition-all"
               >
                 {isSubmitting ? (
-                  <><div className="w-5 h-5 border-2 border-white/50 border-t-white rounded-full animate-spin"></div>Sending...</>
+                  <><div className="w-5 h-5 border-2 border-slate-900/50 border-t-slate-900 rounded-full animate-spin"></div>Sending...</>
                 ) : (
                   <><FaPaperPlane className="w-4 h-4" />Send Message</>
                 )}
@@ -123,7 +123,6 @@ const Contact: React.FC = () => {
         </div>
       </div>
 
-      {/* Footer */}
       <div className="text-center mt-10 pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
         <p className="text-sm" style={{ color: '#94a3b8' }}>
           © {new Date().getFullYear()} Ashan Buddhimal. All rights reserved.

@@ -39,9 +39,9 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 w-full z-50 bg-slate-800/90 text-white py-4 ${isScrolled ? 'shadow-lg shadow-sky-300/10' : ''}`}>
+    <header className={`fixed top-0 w-full z-50 bg-slate-800/90 text-white py-4 ${isScrolled ? 'shadow-lg shadow-yellow-600/10' : ''}`}>
       <nav className="container mx-auto px-4 flex justify-between items-center">
-        <a href="#home" className="text-2xl font-bold text-sky-300">Ashan.</a>
+        <a href="#home" className="text-2xl font-bold text-yellow-600">Ashan.</a>
 
         <div className="hidden lg:flex items-center gap-4">
           {navItems.map((item) => (
@@ -50,17 +50,17 @@ const Header: React.FC = () => {
               href={item.href}
               className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                 activeSection === item.href.substring(1)
-                  ? 'bg-sky-400 text-white'
-                  : 'text-sky-100 hover:bg-sky-400/20'
+                  ? 'bg-yellow-600 text-slate-900'
+                  : 'text-yellow-100 hover:bg-yellow-600/20'
               }`}
             >
               {item.name}
             </a>
           ))}
 
-          <div className="flex items-center gap-2 ml-4 pl-4 border-l border-sky-300/20">
+          <div className="flex items-center gap-2 ml-4 pl-4 border-l border-yellow-600/20">
             {socialLinks.map(({ Icon, href, label, color }) => (
-              <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg hover:bg-sky-400/20">
+              <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg hover:bg-yellow-600/20">
                 <Icon className="w-5 h-5" style={{ color }} />
               </a>
             ))}
@@ -69,14 +69,14 @@ const Header: React.FC = () => {
           <a
             href="/assets/Ashan_resume_2026.pdf"
             download="Ashan_resume_2026.pdf"
-            className="ml-4 px-4 py-2 bg-sky-400 text-white font-semibold rounded-lg hover:bg-sky-300 hover:text-slate-800 transition-all flex items-center gap-2"
+            className="ml-4 px-4 py-2 bg-yellow-600 text-slate-900 font-semibold rounded-lg hover:bg-yellow-600 transition-all flex items-center gap-2"
           >
             <FaDownload className="w-4 h-4" />
             Resume
           </a>
         </div>
 
-        <button className="lg:hidden p-2 rounded-lg hover:bg-sky-400/20" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <button className="lg:hidden p-2 rounded-lg hover:bg-yellow-600/20" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {isMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
         </button>
       </nav>
@@ -89,8 +89,8 @@ const Header: React.FC = () => {
               href={item.href}
               className={`block py-2 px-4 rounded-lg font-semibold text-center mb-1 ${
                 activeSection === item.href.substring(1)
-                  ? 'bg-sky-400 text-white'
-                  : 'text-sky-100 hover:bg-sky-400/20'
+                  ? 'bg-yellow-600 text-slate-900'
+                  : 'text-yellow-100 hover:bg-yellow-600/20'
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -98,9 +98,9 @@ const Header: React.FC = () => {
             </a>
           ))}
 
-          <div className="flex justify-center gap-4 py-4 border-t border-sky-300/20">
+          <div className="flex justify-center gap-4 py-4 border-t border-yellow-600/20">
             {socialLinks.map(({ Icon, href, label, color }) => (
-              <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg hover:bg-sky-400/20" onClick={() => setIsMenuOpen(false)}>
+              <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg hover:bg-yellow-600/20" onClick={() => setIsMenuOpen(false)}>
                 <Icon className="w-5 h-5" style={{ color }} />
               </a>
             ))}
@@ -109,7 +109,7 @@ const Header: React.FC = () => {
           <a
             href="/assets/Ashan_resume_2026.pdf"
             download="Ashan_resume_2026.pdf"
-            className="block px-4 py-3 bg-sky-400 text-white font-semibold rounded-lg text-center hover:bg-sky-300 hover:text-slate-800 transition-all flex items-center justify-center gap-2"
+            className="block px-4 py-3 bg-yellow-600 text-slate-900 font-semibold rounded-lg text-center hover:bg-yellow-600 transition-all flex items-center justify-center gap-2"
             onClick={() => setIsMenuOpen(false)}
           >
             <FaDownload className="w-4 h-4" />
