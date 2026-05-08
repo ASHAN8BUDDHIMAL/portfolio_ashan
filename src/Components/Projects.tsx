@@ -105,14 +105,14 @@ const Projects: React.FC = () => {
     <section id="projects" className="py-12 relative text-slate-700">
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat  bg-gray-700" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600&auto=format&fit=crop')` }}></div>
       <div className="absolute inset-0 bg-white/20"></div>
-      <div className="container mx-auto px-2 text-center mb-8 relative z-10 shadow-lg shadow-yellow-600/10 rounded-lg py-6" style={{ background: 'rgba(255,255,255,0.6)' }}>
+      <div className="mx-4 sm:container sm:mx-auto sm:px-4 sm:max-w-3xl text-center mb-8 relative z-10 shadow-lg shadow-yellow-600/10 rounded-lg py-4 sm:py-6" style={{ background: 'rgba(255,255,255,0.8)' }}>
         <h2 className="text-3xl sm:text-4xl font-bold text-yellow-600">My Projects</h2>
         <p className="text-lg text-yellow-600 max-w-2xl mx-auto mt-2">
           Real-world projects solving problems with modern tech stacks.
         </p>
       </div>
 
-      <div className="container mx-auto px-2 grid md:grid-cols-2 gap-6 max-w-3xl relative z-10">
+      <div className="mx-4 sm:container sm:mx-auto sm:px-4 grid md:grid-cols-2 gap-4 sm:gap-6 sm:max-w-3xl relative z-10">
         {projects.map((project, index) => (
           <div
             key={index}

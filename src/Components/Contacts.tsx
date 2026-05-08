@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { FaPhone, FaEnvelope, FaLinkedin, FaGithub, FaPaperPlane } from 'react-icons/fa';
 
 const contactInfo = [
-  { icon: FaPhone,    label: 'Phone',    value: '071 0474331 / 072 5268605',       href: 'tel:+94710474331',                                 color: '#22c55e' },
-  { icon: FaEnvelope, label: 'Email',    value: 'ashanbuddhimal@gmail.com',         href: 'mailto:ashanbuddhimal@gmail.com',                  color: '#EA4335' },
+  { icon: FaPhone,    label: 'Phone',    value: '071 0474331',                      href: 'tel:+94710474331',                                 color: '#22c55e' },
+  { icon: FaPhone,    label: 'Phone 2',  value: '072 5268605',                      href: 'tel:+94725268605',                                 color: '#22c55e' },
+  { icon: FaEnvelope, label: 'Email',    value: 'ashanbuddhimal@gmail.com',         href: 'https://mail.google.com/mail/?view=cm&to=ashanbuddhimal@gmail.com',                  color: '#EA4335' },
   { icon: FaLinkedin, label: 'LinkedIn', value: 'linkedin.com/in/ashan-buddhimal',  href: 'https://linkedin.com/in/ashan-buddhimal-bb6a892b4', color: '#0A66C2' },
   { icon: FaGithub,   label: 'GitHub',   value: 'github.com/ASHAN8BUDDHIMAL',       href: 'https://github.com/ASHAN8BUDDHIMAL',               color: '#24292e' },
 ];

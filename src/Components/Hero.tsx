@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
       ></div>
       <div className="absolute inset-0 bg-slate-900/75"></div>
 
-      <div className="container mx-auto px-4 py-16 max-w-6xl relative z-10">
+      <div className="container mx-auto px-4 py-8 max-w-6xl relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           <div className="flex lg:hidden justify-center items-center mb-8">
             <img
@@ -73,19 +73,6 @@ const Hero: React.FC = () => {
               </a>
             </div>
 
-            <div className="flex justify-center lg:justify-start gap-4">
-              {socialLinks.map(({ Icon, href, label, color }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 bg-white/10 rounded-lg border border-yellow-600/30 hover:bg-yellow-600/20 hover:scale-110 transition-all"
-                >
-                  <Icon className="w-6 h-6" style={{ color }} />
-                </a>
-              ))}
-            </div>
           </div>
 
           <div className="hidden lg:flex justify-center items-end" style={{ position: 'relative' }}>
