@@ -21,6 +21,15 @@ const Hero: React.FC = () => {
 
       <div className="container mx-auto px-4 py-16 max-w-6xl relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
+          <div className="flex lg:hidden justify-center items-center mb-8">
+            <img
+              src="/assets/ashan.png"
+              alt="Ashan Buddhimal"
+              className="object-contain"
+              style={{ width: 200, height: 'auto', maxHeight: '50vh' }}
+            />
+          </div>
+
           <div className="text-center lg:text-left space-y-6">
             <div className="inline-flex items-center gap-2 bg-yellow-600/10 rounded-full px-4 py-2 border border-yellow-600/30">
               <div className="w-2 h-2 bg-yellow-600 rounded-full animate-pulse"></div>
