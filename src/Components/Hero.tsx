@@ -1,11 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail, Download } from 'lucide-react';
-
-const socialLinks = [
-  { Icon: Linkedin, href: 'https://linkedin.com/in/ashan-buddhimal-bb6a892b4', label: 'LinkedIn', color: '#0A66C2' },
-  { Icon: Github, href: 'https://github.com/ASHAN8BUDDHIMAL', label: 'GitHub', color: '#ffffff' },
-  { Icon: Mail, href: 'mailto:ashanbuddhimal@gmail.com', label: 'Email', color: '#EA4335' },
-];
+import { Mail, Download } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
