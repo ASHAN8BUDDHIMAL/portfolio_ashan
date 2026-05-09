@@ -109,7 +109,7 @@ const Header: React.FC = () => {
           <a
             href="/assets/Ashan_resume_2026.pdf"
             download="Ashan_resume_2026.pdf"
-            className="block px-4 py-3 bg-yellow-600 text-slate-900 font-semibold rounded-lg text-center hover:bg-yellow-600 transition-all flex items-center justify-center gap-2"
+            className="flex px-4 py-3 bg-yellow-600 text-slate-900 font-semibold rounded-lg text-center hover:bg-yellow-600 transition-all items-center justify-center gap-2"
             onClick={() => setIsMenuOpen(false)}
           >
             <FaDownload className="w-4 h-4" />
